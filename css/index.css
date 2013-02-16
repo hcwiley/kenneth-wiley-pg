@@ -1,0 +1,137 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  text-decoration: none;
+  font-family: "Helvetica", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#todo {
+  margin: 40px auto;
+  text-align: center;
+  width: 600px;
+  height: auto;
+  min-height: auto;
+}
+#todo padding 4`0px 100px,
+#todo background-color #ecefef,
+#todo p {
+  text-align: left;
+  font-size: 13pt;
+}
+#todo a {
+  color: #343496;
+}
+#todo ul {
+  margin-left: 50px;
+}
+#todo li {
+  list-style: none;
+  background-image: url("../images/bullet.svg");
+  background-position: -150px 0px;
+  background-repeat: no-repeat;
+  background-size: 60% 60%;
+  margin-bottom: 5px;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  height: 20px;
+}
+#todo li a {
+  color: #933;
+}
+.stripe {
+  position: absolute;
+  left: 0px;
+  padding: 30px 0px;
+  width: 100%;
+  height: 190px;
+  background-color: #343496;
+}
+.stripe .center {
+  width: 721px;
+  margin: 0 auto;
+}
+.stripe h2 {
+  color: #fff;
+}
+.stripe p,
+.stripe a p {
+  font-family: 'Economica' sans-serif;
+  margin: 10px auto;
+  color: #fff;
+  width: 350px;
+  font-weight: 200;
+  line-height: 15pt;
+  font-size: 18px;
+}
+.content {
+  width: 600px;
+  height: auto;
+  position: relative;
+  top: 260px;
+  margin: 20px auto 0px auto;
+}
+.content p {
+  font-size: 12px;
+}
+strong {
+  font-variant: small-caps;
+  font-size: 18pt;
+  color: #fff;
+}
+.span4 {
+  width: 350px;
+  height: 160px;
+  margin: 10px 10px 0 0;
+  display: inline-block;
+  float: left;
+  text-align: center;
+}
+.span4 h3 {
+  color: #fff;
+  width: 350px;
+  margin: 22px 0 36px 0;
+}
+.span4:first-child {
+  border-right: 1px dashed #fff;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.span4:last-child {
+  margin-right: 0px;
+  padding-right: 0px;
+}
+.link {
+  height: 30px;
+  width: 340px;
+  background-size: 90px 90px;
+  background-repeat: no-repeat;
+  background-position: 10% 10%;
+  padding: 25px 0 30px 25px;
+  margin: 0px 10px;
+  float: left;
+  display: inline-block;
+}
+.link p {
+  color: #fff;
+}
+.link:hover {
+  opacity: 0.5;
+}
+#phone {
+  padding-top: 15px;
+  padding-left: 0px;
+  background-image: url("../images/phone.svg");
+}
+#email {
+  background-image: url("../images/email.svg");
+}
+h1 {
+  font-family: 'Adamina', serif;
+  color: #336;
+  font-variant: small-caps;
+}
