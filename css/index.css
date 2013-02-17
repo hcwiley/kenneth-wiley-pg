@@ -9,39 +9,25 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-image: url("../images/bg.png");
 }
 #todo {
   margin: 40px auto;
   text-align: center;
   width: 600px;
   height: auto;
-  min-height: auto;
+  min-height: 100%;
+  background-image: url("../images/oil-rig.png");
+  background-repeat: no-repeat;
+  background-position: -110px 210px;
+  background-size: 660px 500px;
 }
-#todo padding 4`0px 100px,
-#todo background-color #ecefef,
-#todo p {
-  text-align: left;
+p {
+  text-align: center;
   font-size: 13pt;
 }
-#todo a {
+a {
   color: #343496;
-}
-#todo ul {
-  margin-left: 50px;
-}
-#todo li {
-  list-style: none;
-  background-image: url("../images/bullet.svg");
-  background-position: -150px 0px;
-  background-repeat: no-repeat;
-  background-size: 60% 60%;
-  margin-bottom: 5px;
-  padding-left: 60px;
-  padding-bottom: 10px;
-  height: 20px;
-}
-#todo li a {
-  color: #933;
 }
 .stripe {
   position: absolute;
@@ -50,6 +36,11 @@ body {
   width: 100%;
   height: 190px;
   background-color: #343496;
+  background-color: #2f2993;
+  include: filter-gradient(#2f2993, #2f2993, vertical);
+  include: background-image(linear-gradient(top, #2f2993 0%, #343496 50%, #2f2993 100%));
+  opacity: 0.85;
+  box-shadow: 0px 15px 35px rgba(0,0,0,0.3);
 }
 .stripe .center {
   width: 721px;
@@ -134,4 +125,12 @@ h1 {
   font-family: 'Adamina', serif;
   color: #336;
   font-variant: small-caps;
+}
+footer {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+footer p {
+  font-size: 10px;
 }
