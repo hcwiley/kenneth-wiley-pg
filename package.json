@@ -26,7 +26,6 @@
     "passport-local"        : "*",
     "socket.io"             : "*",
     "socket.io-client"      : "*",
-    "node-osc"              : "*",
     "twitter-bootstrap"     : "*",
     "passport"              : "*",
     "supervisor"            : "*",

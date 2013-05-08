@@ -5,8 +5,7 @@ config = require("./config")
 express = require("express")
 path = require("path")
 http = require("http")
-socketIo = require("socket.io")
-osc = require("node-osc")
+#socketIo = require("socket.io")
 mongoose = require("mongoose")
 MongoStore = require("connect-mongo")(express)
 passport = require("passport")
@@ -35,10 +34,10 @@ mongoose.connect config.mongodb
 # create app, server, and web sockets
 app = express()
 server = http.createServer(app)
-io = socketIo.listen(server)
+#io = socketIo.listen(server)
 
 # Make socket.io a little quieter
-io.set "log level", 1
+#io.set "log level", 1
 
 # Give socket.io access to the passport user from Express
 #io.set('authorization', passportSocketIo.authorize(
@@ -69,20 +68,20 @@ app.configure ->
   app.use express.static(path.join(__dirname, "public"))
   app.use express.errorHandler()  if config.useErrorHandler
 
-io.sockets.on "connection",  (socket) ->
+#io.sockets.on "connection",  (socket) ->
 
-  socket?.emit "connection", "I am your father"
+  #socket?.emit "connection", "I am your father"
 
-  socket.on "disconnect", ->
-    console.log "disconnected"
+  #socket.on "disconnect", ->
+    #console.log "disconnected"
 
-  socket.on "lock", (data) ->
-    console.log "lock!"
-    oscClient.send "/door", "lock"
+  #socket.on "lock", (data) ->
+    #console.log "lock!"
+    #oscClient.send "/door", "lock"
 
-  socket.on "unlock", (data) ->
-    console.log "unlock!"
-    oscClient.send "/door", "unlock"
+  #socket.on "unlock", (data) ->
+    #console.log "unlock!"
+    #oscClient.send "/door", "unlock"
 
 require("./urls")(app)
 
