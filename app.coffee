@@ -1,15 +1,11 @@
-###
-Module dependencies.
-###
-config = require("./config")
 express = require("express")
+config = require("./config")
 path = require("path")
 http = require("http")
-#socketIo = require("socket.io")
 mongoose = require("mongoose")
 MongoStore = require("connect-mongo")(express)
 passport = require("passport")
-LocalStrategy = require("passport-local").Strategy
+LocalStrategy = require('passport-local').Strategy
 sessionStore = new MongoStore(url: config.mongodb)
 models = require('./models')
 User = models.User

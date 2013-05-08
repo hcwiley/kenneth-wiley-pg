@@ -8,7 +8,7 @@ exports.upload = (req, res) ->
   auth.signIn req, res, ->
     console.log "handle upload: #{JSON.stringify req.files.file }"
     name = req.files.file.name
-    name = name.replace(/ /g,'-')
+    name = name.replace /\ /g, '-'
     file = new File name: name
     console.log file
     path = "#{file.group}/#{file.name}"
@@ -23,4 +23,18 @@ exports.list = (req, res) ->
     if err
       console.log err
       res.send 500
-    res.render "files/list", files: files
+    res.render "files/list", files: files, user: req.user
+
+
+exports.delete = (req, res) ->
+  if req.user
+    File.findById(req.params.id).exec (err, file) ->
+      if err
+        console.log err
+        res.send 500
+      if !file
+        console.log "didnt find the file to delete"
+        res.send 500
+      file.remove()
+      return res.redirect("/files")
+  return res.redirect("/files")
