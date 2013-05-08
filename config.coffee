@@ -1,7 +1,7 @@
 exports.loggerFormat = "dev"
 exports.useErrorHandler = true
 exports.enableEmailLogin = true
-exports.mongodb = "mongodb://localhost/kenwiley"
+exports.mongodb = process.env.MONGODB || "mongodb://localhost/kenwiley"
 exports.sessionSecret = "super duper bowls"
 
 exports.s3Bucket = process.env.S3BUCKET || "kenwiley-mox";
