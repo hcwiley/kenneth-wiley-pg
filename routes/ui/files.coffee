@@ -7,7 +7,9 @@ File = require('../../models').File
 exports.upload = (req, res) ->
   auth.signIn req, res, ->
     console.log "handle upload: #{JSON.stringify req.files.file }"
-    file = new File name: req.files.file.name
+    name = req.files.file.name
+    name = name.replace(/ /g,'-')
+    file = new File name: name
     console.log file
     path = "#{file.group}/#{file.name}"
     s3.putFile req.files.file.path, req.files.file.type, path, =>
