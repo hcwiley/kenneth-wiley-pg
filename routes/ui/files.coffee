@@ -11,7 +11,7 @@ exports.upload = (req, res) ->
     name = name.replace /\ /g, '-'
     file = new File name: name
     console.log file
-    path = "#{file.group}/#{file.name}"
+    path = "#{file.group}/#{file._id}"
     s3.putFile req.files.file.path, req.files.file.type, path, =>
       file.path = s3.getS3Path path
       file.save()
