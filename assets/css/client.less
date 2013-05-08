@@ -1,0 +1,49 @@
+@import "bootstrap/bootstrap";
+
+@baseGray: #ccc;
+@baseWhite: #fff;
+@baseFont: sans-serif;
+
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  &.userNotFetched {
+    .withoutUser, .withUser {
+      display: none;
+    }
+  }
+  &.hasUser {
+    .withoutUser {
+      display: none;
+    }
+  }
+  &.noUser {
+    .withUser {
+      display: none;
+    }
+  }
+}
+
+@import "bootstrap/responsive";
+@import "bootstrap/mixins";
+
+body {
+color: #666;
+display: block;
+font-family: OpenSans, arial, sans-serif;
+font-size: 13px;
+font-style: normal;
+line-height: 24px;
+margin-bottom: 20px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+}
+
+#main {
+}
+
+.inline {
+  display: inline;
+}

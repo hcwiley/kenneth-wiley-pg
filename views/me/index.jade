@@ -1,0 +1,51 @@
+extends ../layout
+
+block content
+  .row.container-fluid
+    .span8
+      h4 Edit Your Info
+      -var needsUpdate = needsUpdate || false
+      if needsUpdate
+        h1(style='color: #c22') You need to update your name, email, and password!
+        form.form-inline.span4(action='/me', method='post')
+          input(type='hidden', name='_method', value='put')
+          label Email
+          input.pull-right(required='true', type='email', name='email', placeholder='Email', value=user.email)
+          br
+          br
+          label Name
+          input.pull-right(required='true', type='text', name='name', placeholder='Name', value=user.name)
+          br
+          br
+          label Password
+          input.pull-right(required='true', type='password', name='password', placeholder='Password')
+          br
+          br
+          button.pull-right.btn.btn-primary Update
+      else
+        form.form-inline.span4(action='/me', method='post')
+          input(type='hidden', name='_method', value='put')
+          label Email
+          input.pull-right(type='email', name='email', placeholder='Email', value=user.email)
+          br
+          br
+          label Name
+          input.pull-right(type='text', name='name', placeholder='Name', value=user.name)
+          br
+          br
+          label Password
+          input.pull-right(type='password', name='password', placeholder='Password')
+          br
+          br
+          button.pull-right.btn.btn-primary Update
+  br
+  hr
+  br
+  .row.container-fluid
+    .span10
+      h2 Upload a file
+      form(action="/upload", method="post", enctype="multipart/form-data")
+        .control-group.span4
+          label.inline File to upload
+          input.inline(type='file', name='file')
+        button.btn.btn-primary Submit

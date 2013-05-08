@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  for file in files
+    a(href='#{file.path}') #{file.name}
+    br

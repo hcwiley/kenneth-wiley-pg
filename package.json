@@ -1,9 +1,36 @@
 {
-  "name"      : "code.hcwiley.com",
+  "name"      : "studio-brain",
   "version"   : "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">0.8"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-      "jade":"0.27.2",
-      "serve":"1.1.0",
-      "stylus":"0.29.0"
+    "async": "*",
+    "coffee-script"         : "*",
+    "express"               : "*",
+    "connect-assets"        : "*",
+    "cookie"                : "*",
+    "jade"                  : "*",
+    "less"                  : "*",
+    "stylus"                : "*",
+    "less-middleware"       : "*",
+    "mongoose"              : "*",
+    "bcrypt"                : "*",
+    "mongoose-types"        : "*",
+    "connect-mongo"         : "*",
+    "passport"              : "*",
+    "passport-local"        : "*",
+    "socket.io"             : "*",
+    "socket.io-client"      : "*",
+    "node-osc"              : "*",
+    "twitter-bootstrap"     : "*",
+    "passport"              : "*",
+    "supervisor"            : "*",
+    "noxmox"                :" *",
+    "underscore": "*"
   }
 }
