@@ -1,6 +1,14 @@
 extends ../layout
 
 block content
-  for file in files
-    a(href='#{file.path}') #{file.name}
-    br
+  .row.container-fluid
+    .span8.offset1
+      ul
+      for file in files
+        a(href='#{file.path}')
+          li #{file.name}
+          if user
+            form(action='/files/#{file._id}', method='post')
+              input(type='hidden', name='_method', value='delete')
+              button.btn.btn-danger Delete
+        br

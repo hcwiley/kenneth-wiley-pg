@@ -23,3 +23,4 @@ module.exports = (app) ->
   
   app.post "/upload", routes.ui.files.upload
   app.get "/files", routes.ui.files.list
+  app.delete "/files/:id", routes.ui.files.delete
