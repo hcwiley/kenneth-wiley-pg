@@ -104,7 +104,7 @@ if 'HEROKU' in os.environ.keys():
   HEROKU_NODE = "/app/bin/node"
 else:
   HEROKU = False
-  PIPELINE_STYLUS_BINARY = '/usr/local/bin/stylus'
+  PIPELINE_STYLUS_BINARY = '/usr/local/share/npm/bin/stylus'
   PIPELINE_YUGLIFY_BINARY = '/usr/local/share/npm/bin/yuglify'
   PIPELINE_UGLIFYJS_BINARY = '/usr/local/share/npm/lib/node_modules/yuglify/node_modules/uglify-js/bin/uglifyjs'
 
@@ -114,8 +114,7 @@ PIPELINE_CSS = {
     'client': {
         'source_filenames': (
           'css/bootstrap.min.css',
-          'css/jquery-ui-1.10.3.custom.min.css',
-          'css/client.styl',
+          'css/index.styl',
         ),
         'output_filename': 'css/client.min.css',
         'extra_context': {
@@ -177,11 +176,6 @@ ROOT_URLCONF = 'destiny_resources.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'destiny_resources.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

@@ -1,0 +1,29 @@
+{% load compressed %}
+doctype 5
+html(lang="en")
+  head
+    title=PAGE_TITLE
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    {% compressed_css 'client' %}
+    {% compressed_js 'client' %}
+    link(rel='icon', type='image/x-icon', href='./images/fav.png')
+  body
+    header.navbar.navbar-fixed-top
+      nav.navbar(role="navigation")
+        .link
+          a(href='/contact') Contact
+        .link
+          a(href='/areas') Focus Areas
+        .link
+          a(href='/projects') Current Projects
+        .logo
+          a(href='/')
+            img(src='#{STATIC_URL}img/header-logo.png')
+    #content.container
+      .row
+        br
+      .row
+        block content
+    footer
+      p site designed by 
+        a(target='_blank', href='http://code.hcwiley.com/') hcwiley
