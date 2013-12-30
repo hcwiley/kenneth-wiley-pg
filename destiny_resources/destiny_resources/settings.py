@@ -189,6 +189,7 @@ INSTALLED_APPS = (
     'django.contrib.webdesign',
     'pipeline',
     'south',
+    'oil_gas_project',
 )
 
 # A sample logging configuration. The only tangible logging

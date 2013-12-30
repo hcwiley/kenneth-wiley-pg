@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response, redirect
 from django.http import Http404
 from django.conf import settings
 from django.core.context_processors import csrf
+from oil_gas_project.models import *
 
 def common_args(request):
     """
@@ -22,4 +23,21 @@ def common_args(request):
 def home(req):
   args = common_args(req)
   return render_to_response("index.jade", args)
+  
+def contact(req):
+  args = common_args(req)
+  args['contacts'] = ContactInfo.objects.all()
+  return render_to_response("contact.jade", args)
+  
+def about(req):
+  args = common_args(req)
+  return render_to_response("about.jade", args)
+  
+def areas(req):
+  args = common_args(req)
+  return render_to_response("areas.jade", args)
+  
+def projects(req):
+  args = common_args(req)
+  return render_to_response("projects.jade", args)
   
