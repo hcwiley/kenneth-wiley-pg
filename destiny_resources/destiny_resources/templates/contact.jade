@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  {% for contact in contacts %}
+  .col-sm-6
+    h4 #{contact.name}
+    h4 #{contact.info}
+    h4 #{contact.email}
+    h4 #{contact.phone}
+  {% endfor %}
+  br

@@ -22,6 +22,7 @@ def common_args(request):
 
 def home(req):
   args = common_args(req)
+  args['areas'] = FocusArea.objects.all()
   return render_to_response("index.jade", args)
   
 def contact(req):

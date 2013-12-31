@@ -10,3 +10,9 @@ class ContactInfo(models.Model):
 
   def __unicode__(self):
     return self.name
+
+class FocusArea(models.Model):
+  name = models.CharField(max_length=100, blank=False, null=False, default="")
+
+  def __unicode__(self):
+    return self.name

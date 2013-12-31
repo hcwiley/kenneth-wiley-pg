@@ -1,14 +1,34 @@
 extends layout
-
+{% load webdesign %}
 block content
-  #todo
-    h1
-      img(src='#{STATIC_URL}/img/logo.png', title='Kenneth Wiley - Petroleum Geologist')
-    br
-  .stripe
-    .center
-      .span4
-        h3 Corporate Address
-        p P.O.  Box 130245
-        p The Woodlands, Texas  77381 
-    br
+  .row
+    .stripe.col-sm-10.col-sm-offset-1.white-shadow
+      .col-sm-6
+        img(src='#{STATIC_URL}/img/logo.png', title='Destiny Resources', width='100%')
+      .col-sm-4.col-sm-offset-1.text-center
+        br
+        //-h3(style='font-variant: small-caps') what we do
+        hr.blue.dashed
+        br
+        p Destiny Resources is a small Oil &amp; Natural Gas exploration company working mainly in North Louisiana and East Texas.
+        br
+        hr.blue.dashed
+  .row
+    .col-sm-12
+      br
+      br
+  .row
+    .white-shadow.col-sm-2.col-sm-offset-1.h320
+      h3.text-center(style='font-variant: small-caps') focus areas
+      hr.blue.dashed
+      {% for area in areas %}
+      .col-sm-10.col-sm-offset-1
+        a(href='/areas/#{area.id}')
+          h6 #{area.name}
+          {% if not forloop.last %}
+          hr
+          {% endif %}
+      {% endfor %}
+    .white-shadow.col-sm-7.col-sm-offset-1.h320
+      img(src='#{STATIC_URL}/img/focus-area.png', title='Destiny Resources', width='100%')
+      br
