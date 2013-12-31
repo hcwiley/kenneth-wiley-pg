@@ -1,0 +1,105 @@
+extends layout
+{% load webdesign %}
+
+block content
+  .navbar-about.bs-sidebar.affix.col-sm-2.white-shadow.hidden-xs
+    ul#sidebar.nav
+      li
+        a(href='#business') Business Plan
+        ul#business-plan.nav.navbar-inner
+          li
+            a(href='#vision') Vision
+          li
+            a(href='#strategy') Strategy
+          li
+            a(href='#mission') Mission
+          li
+            a(href='#profile') Profile
+          li
+            a(href='#results') Results
+          li
+            a(href='#implementation') Implementation
+          li
+            a(href='#operational-strategies') Operational Strategies
+      li
+        a(href='#bio') Bio
+        ul#bios.nav.navbar-inner
+          li
+            a(href='#ken') Kenneth Wiley
+          li
+            a(href='#gene') Gene Huggs
+          li
+            a(href='#cole') H. Cole Wiley
+  #about.col-sm-8.col-sm-offset-3
+    #business.col-sm-12(data-spy='scroll', target='#business-plan', data-offset='0')
+      h2.text-center BUSINESS PLAN
+      h4#vision VISION
+      p An Upper Gulf Coast oil and gas focus on value creation through the exploitation, development and acquisition of oil and gas reserves.
+      br
+      h4#strategy STRATEGY
+      p Maintain a proactive, focused exploitation and production approach committed to employing technical and operational expertise in the Upper Gulf Coast geologic trends where projects are being generated and acquired.  
+      br
+      h4#mission MISSION
+      p Create value for partners by generating prospects and acquiring property interests with significant upside potential and limited downside risk and to identify and capture unrecognized value in the proved and probable reserve categories.  
+      br
+      h4#profile PROFILE
+      p Acquire oil and gas interests with significant upside potential and limited downside risk.  Develop this potential while mitigating the inherent risk associated with oil and gas production.  The geographic area of focus is the Upper Gulf Coast.  As important is the strategic focus, which is to generate and acquire interests in oil and gas exploitation projects.  Success has been obtained in the geographic and strategic focus areas utilizing extensive oil and gas experience exploiting properties in the defined areas.  This experience combined with creative abilities has resulted in a long list of active projects being pursued and to continue to pursue in achieving the mission.  While pursuing these projects, additional ideas are continually being generated, evaluated and initiated for future projects.
+      br
+      h4#results RESULTS
+      p The plan has been proven successful by utilizing the proactive, focused exploitation and production commitment and employing technical and operational expertise in the North Louisiana and Central Mississippi Lower Cretaceous and Jurassic geologic trends.
+      br
+      h4#implementation IMPLEMENTATION
+      p The mission is to create value for partners by generating prospects and acquiring property interests with significant upside potential and limited downside risk. The focus is on generating increases in production and cash flow as fuel for future growth.  Continuing to be disciplined in the decision making process and following the objectives listed below will continue to result in superior performance.
+      br
+      p.col-sm-offset-1 (1)	Wiley will continue to be proactive rather than simply reacting to what is available.  Wiley generates growth opportunities.  He strives for as much control as possible.  That is certainly true in the process of generating opportunities, but also acquiring and operating those opportunities. 
+      br
+      p.col-sm-offset-1 (2)	Wiley focuses on projects and trends where there is a competitive advantage.  He maintains a strict geographic and a strategic focus.  He uses expertise in the upper Gulf Coast area to reduce risk and build off of an ever growing knowledge base and expertise of the specific geologic trends. He maintains a strategic focus of further exploitation and development of producing trends. 
+      .col-sm-10.col-sm-offset-1
+        img.img-thumbnail(src='#{STATIC_URL}img/focus-area.png')
+      .row
+      br
+      p.col-sm-offset-1 (3)	Wiley is technically proficient in his areas of activity.   Wiley’s strategy of identifying unrecognized value in producing fields and associated trends means he must perform detailed field studies and employ technical expertise in a more disciplined and proficient fashion than others active in the area. He maintains geologic, geophysical and engineering expertise.
+      br
+      p.col-sm-offset-1 (4)	Wiley is a prudent manager of risk by focusing on development type projects.  He limits capital risk on exploration projects. His experience is that excellent rates of return and value creation can be achieved by following a lower risk approach while also still gaining exposure to exploration through other techniques.  Exploration prospect ideas are generated in the process of field development and exploitation activities the capital employed in those exploration activities is just limited.
+      br
+      p Wiley is proactive, focused, exploitation centered and committed to technical expertise in the areas where he is generating, acquiring and operating value creating projects.  
+      br
+      h4#operational-strategies OPERATIONAL STRATEGIES
+      p Wiley creates value and cash flow by exploiting oil and gas reserves.  He relies on experience, expertise, contacts and creative abilities to identify, evaluate, acquire, and make attractive exploitation projects happen.  Since value and cash flow generation with minimal risk is the goal numerous type projects are considered.
+      br
+      p.col-sm-offset-1 (1)	Production Enhancement through re-completion or re-stimulation; enhanced recovery projects; conducting detailed field studies that identify additional potential reserves; and then drilling infill and proven undeveloped locations in such a way as to best exploit this potential.
+      br
+      p.col-sm-offset-1 (2)	Operational Changes such as compression, gathering systems, well treatments, etc. that result in either lower cost or increased production.
+      br
+      p.col-sm-offset-1 (3)	Advanced Technology Applications whether it is 3D seismic, fracture stimulation, horizontal or high angle drilling, secondary or tertiary recovery methods, or other technological applications they will also be considered.
+      br
+      p.col-sm-offset-1 (4)	Prospect Generation is an excellent method for identifying significant potential value and impacting cash flow.  Emphasis is on the generation of median cost, low to moderate risk, high potential projects.  They will have multi-pay and offset potential.  Subsurface geology supported by reservoir engineering and 3D seismic (where applicable) are used in generating these projects.  Risk is mitigated by combining participating working interest and selling interests in the prospects for an after drilling, casing point, payout, or overriding royalty interest.     
+      br
+      p (5)	Acquisitions are used in the focus area as a tool to create value while mitigating risk.  Acquisitions within the focus areas will be done when additional potential can be identified without having to pay for all of the upside.  Although the preference will be to “generate” acquisition prospects within these areas and make offers on an unsolicited basis, reacting to and bidding on marketed packages is not ruled out.  Marketed packages can be worked quickly and better understood as a result expertise in the area.  The same rule applies: additional potential not fully paid for must be the objective.          
+    .col-sm-12
+      br
+      hr.dashed.blue
+      br
+    #bio.col-sm-12(data-spy='scroll', target='#bios', data-offset='10')
+      h2.text-center BIO
+      h4 Kenneth Wiley
+      #ken.col-sm-10.col-sm-offset-1
+        p <strong>Kenneth Wiley</strong> has over thirty years of experience as a petroleum geologist working for major and independent companies and as an independent geologist.  Mr. Wiley has experience managing exploration programs on both a corporate and regional level, but more importantly, <strong>most of his experience has been generating, acquiring and exploiting value creating projects.</strong>  He has geologic and prospect generation experience in a wide variety of basins (Gulf of Mexico, Gulf Coast, Permian, Mid-Continent, Rockies and San Joaquin) and is certified as an expert witness in a number of states.  Though varied, his experience has concentrated on finding additional reserves in and around producing areas.... <strong>exploiting oil and gas reserves.</strong>  In exploiting these reserves he has worked closely, and continues to do so, with geophysicists, reservoir engineers, operations engineers and landmen in team environments.  His experiences as an independent have involved him to some extent in absolutely all phases of oil and gas exploration.  He also has experience acquiring and disposing of properties and in making economic evaluations of and financing oil and gas projects.  He has excellent computer skills and experience with a number of geological, geophysical, reservoir and economic evaluation programs and standard computer software.  Mr. Wiley has served as Managing Member of Destiny Oil & Gas, LLC, Exploitation Manager at Longview Production, briefly as Senior Director at Enron Corporation of North America, Director of Exploration and Production Planning at Range Resources and Acquisitions Geologist for Domain Energy/Tenneco Ventures.  He started his career as a Production Geologist for Arkla Exploration and Texas Oil & Gas in Shreveport, Louisiana.  He is presently working as a geologist generating projects in the Upper Gulf Coast and managing his and his partner’s exploitation projects.  He is also working on a long term consulting project in the Gulf of Mexico.
+        strong Wiley has succeeded as an independent by being proactive, focused, exploitation driven and committed to employing technical and operational expertise in the North Louisiana and Central Mississippi Lower Cretaceous and Jurassic geologic trends. 
+      .col-sm-10.col-sm-offset-1
+        br
+        hr.dashed.blue
+        br
+      .row
+      h4 Gene Huggs
+      #gene.col-sm-10.col-sm-offset-1
+        p <strong>Gene Huggs</strong> {% lorem 3 p %}
+      .col-sm-10.col-sm-offset-1
+        br
+        hr.dashed.blue
+        br
+      .row
+      h4 H. Cole Wiley
+      #cole.col-sm-10.col-sm-offset-1
+        p <strong>H. Cole Wiley</strong> has a background in software development, web design, and 3D design. He has recenlty began working with Kenneth Wiley to help manage day to day operations.
+

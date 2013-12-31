@@ -7,8 +7,8 @@ html(lang="en")
     {% compressed_css 'client' %}
     {% compressed_js 'client' %}
     link(rel='icon', type='image/x-icon', href='./images/fav.png')
-  body
-    header.navbar.navbar-fixed-top
+  body(data-spy='scroll', target='#sidebar', data-offset='10')
+    header.navbar
       nav.navbar(role="navigation")
         .link
           a(href='/contact') Contact
@@ -22,8 +22,7 @@ html(lang="en")
         .link
           a(href='/projects') Current Projects
     #content.container
-      .row
-        block content
+      block content
     footer.col-sm-12
       .row
         p Effective April 1, 2010 Ken Wiley is no longer associated with Destiny Oil &amp; Gas, LLC. For matters pertaining to Destiny Oil &amp; Gas, LLC you may contact either Don Rollins, Jr. or Richard Carson at <a href="http://www.carsonrollins.com">Carson Rollins, LLC</a> 
