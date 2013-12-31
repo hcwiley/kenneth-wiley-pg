@@ -72,8 +72,8 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, '../collected-static')
 STATIC_URL = '/static/'
-if not IS_DEV:
-  STATIC_URL = '//s3.amazonaws.com/destiny_resources/static/'
+#if not IS_DEV:
+  #STATIC_URL = '//s3.amazonaws.com/destiny_resources/static/'
 
 #ADMIN_MEDIA_PREFIX = os.path.join(STATIC_URL, 'admin')
 sys.path.append(PROJECT_ROOT)
@@ -95,15 +95,7 @@ PIPELINE_COMPILERS = (
     'pipeline.compilers.stylus.StylusCompiler',
 )
 #PIPELINE_ENABLED = True
-if 'HEROKU' in os.environ.keys():
-  HEROKU = True
-  PIPELINE_STYLUS_BINARY = '/app/bin/stylus'
-  PIPELINE_YUGLIFY_BINARY = '/app/bin/yuglify'
-  os.environ['PATH'] += ':/app/bin/'
-  PIPELINE_NODE_BINARY = '/app/bin/node'
-  HEROKU_NODE = "/app/bin/node"
-else:
-  HEROKU = False
+if IS_DEV:
   PIPELINE_STYLUS_BINARY = '/usr/local/share/npm/bin/stylus'
   PIPELINE_YUGLIFY_BINARY = '/usr/local/share/npm/bin/yuglify'
   PIPELINE_UGLIFYJS_BINARY = '/usr/local/share/npm/lib/node_modules/yuglify/node_modules/uglify-js/bin/uglifyjs'
