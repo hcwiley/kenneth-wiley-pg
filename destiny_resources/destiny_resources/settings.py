@@ -72,8 +72,8 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, '../collected-static')
 STATIC_URL = '/static/'
-#if not IS_DEV:
-  #STATIC_URL = '//s3.amazonaws.com/destiny_resources/static/'
+if not IS_DEV:
+  STATIC_URL = '//s3.amazonaws.com/destiny_resources/static/'
 
 #ADMIN_MEDIA_PREFIX = os.path.join(STATIC_URL, 'admin')
 sys.path.append(PROJECT_ROOT)
