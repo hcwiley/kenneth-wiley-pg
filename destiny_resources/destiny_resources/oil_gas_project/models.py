@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 
@@ -16,3 +17,7 @@ class FocusArea(models.Model):
 
   def __unicode__(self):
     return self.name
+
+  def get_absolute_url(self):
+    return "/areas/%s" % slugify(self.name)
+
