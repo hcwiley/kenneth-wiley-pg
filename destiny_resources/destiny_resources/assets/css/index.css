@@ -54,13 +54,13 @@ header.navbar nav.navbar {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  width: 760px;
+  width: 840px;
   margin: 5px auto;
 }
 header.navbar nav.navbar .link {
   height: 94%;
+  width: 130px;
   text-align: center;
-  width: 110px;
   border-bottom: none;
   border-top: none;
   margin: 1% 10px;
