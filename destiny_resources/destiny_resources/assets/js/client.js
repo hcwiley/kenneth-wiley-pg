@@ -1,3 +1,7 @@
 $(window).ready(function(){
-  $('#sidebar').scrollspy('refresh');
+  $("body").scrollspy({target:"#sidebar", offset: 210});
+  $("body").scrollspy('refresh');
+  //$('[data-spy="scroll"]').each(function () {
+    //$(this).scrollspy('refresh');
+  //});
 });

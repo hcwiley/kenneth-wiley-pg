@@ -1,11 +1,46 @@
 extends layout
 
 block content
-  {% for contact in contacts %}
-  .col-sm-6
-    h4 #{contact.name}
-    h4 #{contact.info}
-    h4 #{contact.email}
-    h4 #{contact.phone}
-  {% endfor %}
-  br
+  h2.text-center Contact Info
+  .row
+  .col-sm-12
+    br
+    hr.blue
+    br
+    .row
+      .col-sm-8.col-sm-offset-2
+        .col-xs-5
+          br
+          h3 Corporate Address
+        .col-xs-7.white-shadow
+          br
+          p P.O. Box 130245
+          p The Woodlands, Texas 77381
+          br
+    .row
+      .col-sm-8.col-sm-offset-2
+        br
+        hr.dashed.blue
+        br
+    .row
+      {% for contact in contacts %}
+      .col-sm-8.col-sm-offset-2
+        .col-xs-5
+          br
+          h3 #{contact.name}
+        .col-xs-7.white-shadow
+          br
+          h4 #{contact.info}
+          {% autoescape off %}
+          h4 #{contact.emailHTML}
+          h4 #{contact.phoneHTML}
+          {% endautoescape %}
+          br
+      {% if not forloop.last %}
+      .col-sm-8.col-sm-offset-2
+        br
+        hr.dashed.blue
+        br
+      {% endif %}
+      {% endfor %}
+    br

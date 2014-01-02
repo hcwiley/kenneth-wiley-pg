@@ -12,6 +12,21 @@ class ContactInfo(models.Model):
   def __unicode__(self):
     return self.name
 
+  def emailHTML(self):
+    if not self.email:
+      return ""
+    html = "<a href='mailto:%s'>%s</a>" % (self.email, self.email)
+    return html
+
+  def phoneHTML(self):
+    import re
+    if not self.phone:
+      return ""
+    phone = re.sub(r'[().-]+',"", self.phone)
+    phone = "(%s)%s-%s" % (phone[0:3], phone[3:6], phone[6:])
+    html = "<a href='callto:%s'>%s</a>" % (self.phone, phone)
+    return html
+
 class FocusArea(models.Model):
   name = models.CharField(max_length=100, blank=False, null=False, default="")
 

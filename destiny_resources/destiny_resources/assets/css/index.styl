@@ -1,5 +1,16 @@
 $blue = #343496;
 
+@font-face
+  font-family BankGothic
+  src url('../fonts/BankGothicBT Medium.TTF')
+  font-weight 500
+
+@font-face
+  font-family Menlo
+  src url('../fonts/Menlo.ttc')
+  font-weight 500
+
+
 shadow(args...)
    -webkit-box-shadow args
    -moz-box-shadow args
@@ -24,7 +35,10 @@ blue()
   padding 0px
   border 0px
   text-decoration none
-  font-family "Helvetica", sans-serif
+  font-family Menlo, "Helvetica", sans-serif
+
+h1, h2, h3, h4, h5
+  font-family BankGothic
 
 html
   height 100%
