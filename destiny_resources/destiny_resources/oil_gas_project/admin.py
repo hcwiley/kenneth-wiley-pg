@@ -3,3 +3,6 @@ from django.contrib import admin
 
 admin.site.register(ContactInfo)
 admin.site.register(FocusArea)
+admin.site.register(ActivityMap)
+admin.site.register(Project)
+admin.site.register(ProjectAsset)

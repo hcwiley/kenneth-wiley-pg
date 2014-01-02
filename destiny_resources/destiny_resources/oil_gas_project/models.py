@@ -3,6 +3,27 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+class ActivityMap(models.Model):
+  image = models.CharField(max_length=255, blank=False, null=False, default="")
+  is_default = models.BooleanField(default=False)
+
+class Project(models.Model):
+  name = models.CharField(max_length=100, blank=False, null=False, default="")
+  info = models.CharField(max_length=255, blank=False, null=False, default="")
+
+  def __unicode__(self):
+    return self.name
+
+class ProjectAsset(models.Model):
+  name = models.CharField(max_length=100, blank=False, null=False, default="")
+  image = models.CharField(max_length=255, blank=False, null=False, default="")
+  full_res_image = models.CharField(max_length=255, blank=False, null=False, default="")
+  is_default = models.BooleanField(default=False)
+  project = models.ForeignKey('Project')
+
+  def __unicode__(self):
+    return self.name
+
 class ContactInfo(models.Model):
   name = models.CharField(max_length=100, blank=False, null=False, default="")
   email = models.CharField(max_length=100, blank=False, null=False, default="")

@@ -34,11 +34,23 @@ def about(req):
   args = common_args(req)
   return render_to_response("about.jade", args)
   
-def areas(req):
+def business_plan(req):
   args = common_args(req)
-  return render_to_response("areas.jade", args)
+  return render_to_response("business_plan.jade", args)
   
 def projects(req):
+  args = common_args(req)
+  try:
+    args['activity_map'] = ActivityMap.objects.filter(is_default=True)[0]
+  except:
+    pass
+  try:
+    args['projects'] = Project.objects.all()
+  except:
+    pass
+  return render_to_response("projects.jade", args)
+  
+def project(req):
   args = common_args(req)
   return render_to_response("projects.jade", args)
   

@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  #sidebar.navbar-about.bs-sidebar.affix.col-sm-2.white-shadow.hidden-xs
+    ul.nav
+      li
+        a(href='#activity-map') Activity Map
+      {% for project in projects %}
+      li
+        a(href='#p-#{project.id}') #{project.name}
+      {% endfor %}
+  .col-sm-8.col-sm-offset-3.white-shadow
+    #activity-map.col-sm-12.text-center
+      h4 ACTIVITY MAP
+      hr.blue
+      br
+      img.img-thumbnail(src="#{activity_map.image}")
+    br
+  .col-sm-8.col-sm-offset-3
+    .row
+      hr.dashed.blue
+  {% for project in projects %}
+  .col-sm-8.col-sm-offset-3.white-shadow
+    .col-sm-12.text-center(id='p-#{project.id}')
+      h4 #{project.name}
+      hr.blue
+      {% for asset in project.projectasset_set.all %}
+      p #{asset.name}
+      a(href='#{asset.full_res_image}', target='_blank')
+        img.img-thumbnail(src="#{asset.image}")
+      {% if not forloop.last %}
+      .row
+        hr.dashed.blue
+      {% endif %}
+      {% endfor %}
+    br
+  .col-sm-8.col-sm-offset-3
+    br
+  {% endfor %}
