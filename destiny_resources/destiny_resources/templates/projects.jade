@@ -27,7 +27,7 @@ block content
       {% for asset in project.projectasset_set.all %}
       p #{asset.name}
       a(href='#{MEDIA_URL}#{asset.full_res_image}', target='_blank')
-        img.img-thumbnail(src="#{asset.image}")
+        img.img-thumbnail(src="#{MEDIA_URL}#{asset.image}")
       {% if not forloop.last %}
       .row
         hr.dashed.blue

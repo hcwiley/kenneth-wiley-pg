@@ -36,7 +36,7 @@ class ProjectAsset(models.Model):
     path = "%s-small.%s" % (path[0], path[1])
     image.save(path)
     path = path.split(settings.MEDIA_URL)
-    self.image = "%s%s" % (settings.MEDIA_URL, path[1])
+    self.image = "%s" % (path[1])
     super(ProjectAsset, self).save()
   
 
