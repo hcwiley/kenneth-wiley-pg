@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils.text import slugify
+from django.conf import settings
 
 # Create your models here.
 
 class ActivityMap(models.Model):
-  image = models.CharField(max_length=255, blank=False, null=False, default="")
+  image = models.ImageField(upload_to='activity_maps/', default="")
   is_default = models.BooleanField(default=False)
 
 class Project(models.Model):
@@ -16,13 +17,28 @@ class Project(models.Model):
 
 class ProjectAsset(models.Model):
   name = models.CharField(max_length=100, blank=False, null=False, default="")
-  image = models.CharField(max_length=255, blank=False, null=False, default="")
-  full_res_image = models.CharField(max_length=255, blank=False, null=False, default="")
+  image = models.CharField(max_length=255, blank=True, null=True, default="", editable=False)
+  full_res_image = models.ImageField(upload_to='project_assets/', default="")
   is_default = models.BooleanField(default=False)
   project = models.ForeignKey('Project')
 
   def __unicode__(self):
     return self.name
+
+  def save(self):
+    super(ProjectAsset, self).save()
+    import Image
+    path = self.full_res_image.path
+    image = Image.open(path)
+    r = float(image.size[1])/float(image.size[0])
+    image = image.resize((900, int(900*r)))
+    path = path.split(".")
+    path = "%s-small.%s" % (path[0], path[1])
+    image.save(path)
+    path = path.split(settings.MEDIA_URL)
+    self.image = "%s%s" % (settings.MEDIA_URL, path[1])
+    super(ProjectAsset, self).save()
+  
 
 class ContactInfo(models.Model):
   name = models.CharField(max_length=100, blank=False, null=False, default="")

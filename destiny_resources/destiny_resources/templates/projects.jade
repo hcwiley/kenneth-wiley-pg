@@ -14,7 +14,7 @@ block content
       h4 ACTIVITY MAP
       hr.blue
       br
-      img.img-thumbnail(src="#{activity_map.image}")
+      img.img-thumbnail(src="#{MEDIA_URL}#{activity_map.image}")
     br
   .col-sm-8.col-sm-offset-3
     .row
@@ -26,7 +26,7 @@ block content
       hr.blue
       {% for asset in project.projectasset_set.all %}
       p #{asset.name}
-      a(href='#{asset.full_res_image}', target='_blank')
+      a(href='#{MEDIA_URL}#{asset.full_res_image}', target='_blank')
         img.img-thumbnail(src="#{asset.image}")
       {% if not forloop.last %}
       .row

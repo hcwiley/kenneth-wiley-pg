@@ -1,6 +1,7 @@
 #!/bin/bash
 ./manage.py collectstatic --noinput
 s3cmd sync -P ./collected-static/ s3://destiny_resources/static/
+s3cmd sync -P ./destiny_resources/media/ s3://destiny_resources/media/
 git push
 ssh hcwiley.com << EOF
   cd /home/hcwiley/git/kenneth-wiley-pg

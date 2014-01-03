@@ -15,3 +15,4 @@ reform_genie/static
 venv
 staticfiles
 Procfile.local
+media
