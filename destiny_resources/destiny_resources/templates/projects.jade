@@ -24,6 +24,7 @@ block content
     .col-sm-12.text-center(id='p-#{project.id}')
       h4 #{project.name}
       hr.blue
+      {% if project.projectasset_set.count > 0 %}
       {% for asset in project.projectasset_set.all %}
       p #{asset.name}
       a(href='#{MEDIA_URL}#{asset.full_res_image}', target='_blank')
@@ -33,6 +34,9 @@ block content
         hr.dashed.blue
       {% endif %}
       {% endfor %}
+      {% else %}
+      h6 More info on this project coming soon
+      {% endif %}
     br
   .col-sm-8.col-sm-offset-3
     br

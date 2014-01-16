@@ -15,6 +15,9 @@ class Project(models.Model):
   def __unicode__(self):
     return self.name
 
+  def get_absolute_url(self):
+    return "/projects#p-%s" % self.pk
+
 class ProjectAsset(models.Model):
   name = models.CharField(max_length=100, blank=False, null=False, default="")
   image = models.CharField(max_length=255, blank=True, null=True, default="", editable=False)
@@ -43,7 +46,8 @@ class ProjectAsset(models.Model):
 class ContactInfo(models.Model):
   name = models.CharField(max_length=100, blank=False, null=False, default="")
   email = models.CharField(max_length=100, blank=False, null=False, default="")
-  phone = models.CharField(max_length=100, blank=False, null=False, default="")
+  cell = models.CharField(max_length=100, blank=False, null=False, default="")
+  office = models.CharField(max_length=100, blank=True, null=True, default="")
   info = models.CharField(max_length=100, blank=False, null=False, default="")
 
   def __unicode__(self):
@@ -55,21 +59,19 @@ class ContactInfo(models.Model):
     html = "<a href='mailto:%s'>%s</a>" % (self.email, self.email)
     return html
 
-  def phoneHTML(self):
+  def officeHTML(self):
     import re
-    if not self.phone:
+    if not self.office:
       return ""
-    phone = re.sub(r'[().-]+',"", self.phone)
+    phone = re.sub(r'[().-]+',"", self.office)
     phone = "(%s)%s-%s" % (phone[0:3], phone[3:6], phone[6:])
-    html = "<a href='callto:%s'>%s</a>" % (self.phone, phone)
-    return html
+    return "<a href='callto:%s'>%s</a>" % (self.office, phone)
 
-class FocusArea(models.Model):
-  name = models.CharField(max_length=100, blank=False, null=False, default="")
-
-  def __unicode__(self):
-    return self.name
-
-  def get_absolute_url(self):
-    return "/areas/%s" % slugify(self.name)
+  def cellHTML(self):
+    import re
+    if not self.cell:
+      return ""
+    phone = re.sub(r'[().-]+',"", self.cell)
+    phone = "(%s)%s-%s" % (phone[0:3], phone[3:6], phone[6:])
+    return "<a href='callto:%s'>%s</a>" % (self.cellHTML, phone)
 

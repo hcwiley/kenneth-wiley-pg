@@ -33,7 +33,12 @@ block content
           h4 #{contact.info}
           {% autoescape off %}
           h4 #{contact.emailHTML}
-          h4 #{contact.phoneHTML}
+          {% if contact.office %}
+          h4 office: #{contact.officeHTML}
+          {% endif %}
+          {% if contact.cell %}
+          h4 cell: #{contact.cellHTML}
+          {% endif %}
           {% endautoescape %}
           br
       {% if not forloop.last %}

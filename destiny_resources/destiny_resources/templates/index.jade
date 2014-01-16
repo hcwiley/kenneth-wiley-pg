@@ -8,7 +8,6 @@ block content
       .col-md-4.col-md-offset-1.text-center
         .hidden-sm
           br
-        //-h3(style='font-variant: small-caps') what we do
         hr.blue.dashed
         .hidden-sm.hidden-md
           br
@@ -20,18 +19,19 @@ block content
     .col-sm-12
       br
       br
-  .container
-    .white-shadow.col-md-2.col-md-offset-1.h320
+    .white-shadow.col-md-2.col-md-offset-1
       h3.text-center(style='font-variant: small-caps') focus areas
       hr.blue.dashed
-      {% for area in areas %}
-      .col-sm-10.col-sm-offset-1
-        a(href='#{area.get_absolute_url()}')
-          h6 #{area.name}
-          {% if not forloop.last %}
-          hr
-          {% endif %}
+      {% for project in projects %}
+      a(href='#{project.get_absolute_url()}')
+        h6 #{project.name}
+        {% if not forloop.last %}
+        hr
+        {% endif %}
       {% endfor %}
-    .white-shadow.col-md-7.col-md-offset-1.h320
+      br
+    .white-shadow.col-md-7.col-md-offset-1
+      br
       img(src='#{STATIC_URL}img/focus-area.png', title='Destiny Resources', width='100%')
+      br
       br

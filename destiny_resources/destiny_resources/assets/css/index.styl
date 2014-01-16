@@ -105,6 +105,34 @@ header.navbar
         width auto
         position absolute
 
+@media (max-width: 850px)
+  header.navbar
+    position relative
+    top 90px
+    height auto
+    nav.navbar
+      width 100%
+      .link
+        display block
+        width 120px
+      .link.logo
+        position absolute
+        top -135px
+        width 100%
+        left 0px
+        margin 0px
+        padding 0px
+        text-align center
+        img
+          width 240px
+          margin 0 auto
+          float none
+          position static
+  #content
+    margin-top 120px!important
+      
+    
+
 #content
   margin 80px auto
 
@@ -179,6 +207,8 @@ h1
     border-bottom #aaa 1px dashed
   li:last-child
     border-bottom none
+  li > a:hover
+    background #f00!important
 
 li.active
   //background #fff
