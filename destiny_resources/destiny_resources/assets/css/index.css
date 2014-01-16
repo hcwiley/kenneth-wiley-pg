@@ -104,19 +104,22 @@ header.navbar nav.navbar .logo img {
 @media (max-width: 850px) {
   header.navbar {
     position: relative;
-    top: 90px;
+    top: 100px;
     height: auto;
   }
   header.navbar nav.navbar {
     width: 100%;
+    text-align: center;
   }
   header.navbar nav.navbar .link {
     display: block;
-    width: 120px;
+    width: 25%;
+    min-width: 180px;
+    margin: 10px auto;
   }
   header.navbar nav.navbar .link.logo {
     position: absolute;
-    top: -135px;
+    top: -145px;
     width: 100%;
     left: 0px;
     margin: 0px;
@@ -131,6 +134,16 @@ header.navbar nav.navbar .logo img {
   }
   #content {
     margin-top: 120px !important;
+  }
+}
+@media (max-width: 714px) {
+  header.navbar nav.navbar .link {
+    width: 50%;
+  }
+}
+@media (max-width: 383px) {
+  header.navbar nav.navbar .link {
+    width: 100%;
   }
 }
 #content {
@@ -228,8 +241,8 @@ h1 {
 .bs-sidenav li:last-child {
   border-bottom: none;
 }
-.bs-sidenav li > a:hover {
-  background: #f00 !important;
+.nav > li > a:hover {
+  background: #343456;
 }
 li.active > a {
   color: #666;
