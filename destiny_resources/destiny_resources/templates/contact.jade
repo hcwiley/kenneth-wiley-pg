@@ -9,10 +9,10 @@ block content
     br
     .row
       .col-sm-8.col-sm-offset-2
-        .col-xs-5
+        .col-sm-5
           br
           h3 Corporate Address
-        .col-xs-7.white-shadow
+        .col-sm-7.white-shadow
           br
           p P.O. Box 130245
           p The Woodlands, Texas 77381
@@ -25,10 +25,10 @@ block content
     .row
       {% for contact in contacts %}
       .col-sm-8.col-sm-offset-2
-        .col-xs-5
+        .col-sm-5
           br
           h3 #{contact.name}
-        .col-xs-7.white-shadow
+        .col-sm-7.white-shadow
           br
           h4 #{contact.info}
           {% autoescape off %}
