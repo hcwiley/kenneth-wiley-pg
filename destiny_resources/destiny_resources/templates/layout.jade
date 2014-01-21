@@ -6,7 +6,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     {% compressed_css 'client' %}
     {% compressed_js 'client' %}
-    link(rel='icon', type='image/x-icon', href='./images/fav.png')
+    link(rel='icon', type='image/x-icon', href='#{STATIC_URL}img/fav.png')
   body
     header.navbar
       nav.navbar(role="navigation")
