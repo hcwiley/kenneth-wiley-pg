@@ -65,7 +65,7 @@ class ContactInfo(models.Model):
       return ""
     phone = re.sub(r'[().-]+',"", self.office)
     phone = "(%s)%s-%s" % (phone[0:3], phone[3:6], phone[6:])
-    return "<a href='callto:%s'>%s</a>" % (self.office, phone)
+    return "<a href='tel:%s'>%s</a>" % (self.office, phone)
 
   def cellHTML(self):
     import re
@@ -73,5 +73,5 @@ class ContactInfo(models.Model):
       return ""
     phone = re.sub(r'[().-]+',"", self.cell)
     phone = "(%s)%s-%s" % (phone[0:3], phone[3:6], phone[6:])
-    return "<a href='callto:%s'>%s</a>" % (self.cell, phone)
+    return "<a href='tel:%s'>%s</a>" % (self.cell, phone)
 
