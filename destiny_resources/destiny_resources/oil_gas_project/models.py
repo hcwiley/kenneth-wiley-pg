@@ -30,7 +30,7 @@ class ProjectAsset(models.Model):
 
   def save(self):
     super(ProjectAsset, self).save()
-    import Image
+    from PIL import Image
     path = self.full_res_image.path
     image = Image.open(path)
     r = float(image.size[1])/float(image.size[0])
